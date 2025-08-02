@@ -63,7 +63,7 @@ export default function Home() {
       id: 3,
       title: "Weather Dashboard",
       description: "Real-time weather forecasting application with interactive maps and alerts.",
-      image: "https://images.unsplash.com/photo-1561484930-994b8cb85a65?q=80&w=400&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?q=80&w=400&auto=format&fit=crop",
       technologies: ["React", "D3.js", "OpenWeather API"],
       liveUrl: "#",
       githubUrl: "#",
@@ -198,6 +198,7 @@ export default function Home() {
     </div>
   )
 }
+
 
 
 

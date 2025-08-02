@@ -27,7 +27,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <>
+    <div>
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogTrigger asChild>
           <Card className="overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
@@ -101,9 +101,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </div>
         </DialogContent>
       </Dialog>
-    </>
+    </div>
   )
 }
+
+
 
 
 
