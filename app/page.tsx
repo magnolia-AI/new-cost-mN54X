@@ -1,6 +1,6 @@
 'use client'
 
-import Navigation from '@/components/navigation'
+import { Navigation } from '@/components/navigation'
 import { TypingEffect } from '@/components/typing-effect'
 import { ProjectCard } from '@/components/project-card'
 import { Skills } from '@/components/skills'
@@ -138,3 +138,4 @@ export default function Home() {
     </div>
   )
 }
+
