@@ -32,7 +32,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <DialogTrigger asChild>
           <Card className="overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
             <div className="relative h-48 overflow-hidden">
-              <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-full" />
+              <Image 
+                src={project.image} 
+                alt={project.title} 
+                fill 
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
             </div>
             <CardHeader className="pb-2">
               <h3 className="text-xl font-bold">{project.title}</h3>
@@ -58,7 +64,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </DialogHeader>
           <div className="grid gap-6 md:grid-cols-2">
             <div className="relative h-64 md:h-full rounded-lg overflow-hidden">
-              <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-full" />
+              <Image 
+                src={project.image} 
+                alt={project.title} 
+                fill 
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
             <div className="space-y-4">
               <p className="text-muted-foreground">{project.longDescription}</p>
@@ -92,3 +104,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
     </>
   )
 }
+
+
+

@@ -11,30 +11,90 @@ import { Button } from '@/components/ui/button'
 import { Github, Linkedin, Mail, Download } from 'lucide-react'
 
 export default function Home() {
+  const skills = [
+    {
+      name: "JavaScript",
+      level: 90,
+    },
+    {
+      name: "React",
+      level: 85,
+    },
+    {
+      name: "Next.js",
+      level: 80,
+    },
+    {
+      name: "TypeScript",
+      level: 75,
+    },
+    {
+      name: "Node.js",
+      level: 70,
+    },
+    {
+      name: "UI/UX Design",
+      level: 65,
+    },
+  ]
+
   const projects = [
     {
+      id: 1,
       title: "E-Commerce Platform",
       description: "A full-featured online shopping experience with cart functionality and payment processing.",
+      image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=400&auto=format&fit=crop",
       technologies: ["React", "Node.js", "MongoDB"],
-      imageUrl: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=400&auto=format&fit=crop",
-      demoUrl: "#",
-      githubUrl: "#"
+      liveUrl: "#",
+      githubUrl: "#",
+      longDescription: "A comprehensive e-commerce solution built with modern web technologies. This platform includes features such as product catalog, shopping cart, user authentication, payment processing, and order management. The responsive design ensures a seamless experience across all devices."
     },
     {
+      id: 2,
       title: "Task Management App",
       description: "Productivity application for teams to manage projects and collaborate in real-time.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400&auto=format&fit=crop",
       technologies: ["Next.js", "TypeScript", "Firebase"],
-      imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400&auto=format&fit=crop",
-      demoUrl: "#",
-      githubUrl: "#"
+      liveUrl: "#",
+      githubUrl: "#",
+      longDescription: "A collaborative task management application designed for teams to organize projects and track progress. Features include real-time updates, task assignment, due dates, progress tracking, and team collaboration tools. Built with a focus on user experience and productivity."
     },
     {
+      id: 3,
       title: "Weather Dashboard",
       description: "Real-time weather forecasting application with interactive maps and alerts.",
+      image: "https://images.unsplash.com/photo-1561484930-994b8cb85a65?q=80&w=400&auto=format&fit=crop",
       technologies: ["React", "D3.js", "OpenWeather API"],
-      imageUrl: "https://images.unsplash.com/photo-1561484930-994b8cb85a65?q=80&w=400&auto=format&fit=crop",
-      demoUrl: "#",
-      githubUrl: "#"
+      liveUrl: "#",
+      githubUrl: "#",
+      longDescription: "A comprehensive weather dashboard that provides real-time weather information and forecasts. The application features interactive maps, detailed weather metrics, severe weather alerts, and historical data visualization. Data is sourced from reliable weather APIs for accuracy."
+    }
+  ]
+
+  const timelineItems = [
+    {
+      id: 1,
+      title: "Senior Frontend Developer",
+      company: "Tech Innovations Inc.",
+      period: "2020 - Present",
+      description: "Leading frontend development for enterprise SaaS products, mentoring junior developers, and implementing modern UI/UX practices.",
+      technologies: ["React", "TypeScript", "Next.js"]
+    },
+    {
+      id: 2,
+      title: "Frontend Developer",
+      company: "Digital Solutions LLC",
+      period: "2018 - 2020",
+      description: "Developed responsive web applications for various clients, focusing on performance optimization and cross-browser compatibility.",
+      technologies: ["JavaScript", "React", "CSS3"]
+    },
+    {
+      id: 3,
+      title: "Web Developer",
+      company: "Creative Web Agency",
+      period: "2016 - 2018",
+      description: "Created custom websites and web applications for small to medium businesses, ensuring mobile responsiveness and SEO best practices.",
+      technologies: ["HTML5", "CSS3", "JavaScript", "WordPress"]
     }
   ]
 
@@ -91,7 +151,7 @@ export default function Home() {
       <section className="container mx-auto px-4 py-16 bg-muted/30">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Skills & Technologies</h2>
-          <Skills />
+          <Skills skills={skills} />
         </div>
       </section>
 
@@ -100,8 +160,8 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Featured Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <ProjectCard key={index} {...project} />
+            {projects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
             ))}
           </div>
         </div>
@@ -111,7 +171,7 @@ export default function Home() {
       <section className="container mx-auto px-4 py-16 bg-muted/30">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Experience</h2>
-          <Timeline />
+          <Timeline items={timelineItems} />
         </div>
       </section>
 
@@ -138,4 +198,8 @@ export default function Home() {
     </div>
   )
 }
+
+
+
+
 
